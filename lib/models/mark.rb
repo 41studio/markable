@@ -3,10 +3,6 @@ module Markable
     belongs_to :markable, :polymorphic => true
     belongs_to :marker, :polymorphic => true
 
-    if defined?(ActiveModel::MassAssignmentSecurity)
-      attr_accessible :markable_id, :markable_type, :marker_id, :marker_type, :mark
-    end
-
     # Delete orphan marks
     #
     # Marks are deleted when marker or markable record is destroyed. However, in some circumstances, some marks
